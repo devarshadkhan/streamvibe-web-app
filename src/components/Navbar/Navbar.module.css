@@ -1,0 +1,105 @@
+.header_wrp {
+  position: relative;
+  /* background-color: transparent; */
+}
+
+.header_wrp .MuiGrid-root  {
+  align-items: center !important;
+}
+.logo_set {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.logo_set h6 {
+  font-size: 20px;
+  margin: 0;
+}
+.header_wrp .toolbar {
+  padding: 0;
+  background-color: transparent;
+}
+
+
+.header_wrp .navbar{
+ background: transparent;
+ padding: 10px 0;
+ backdrop-filter: blur(20px);
+}
+.header_wrp .navbars {
+  background: transparent;
+  padding: 10px 0;
+}
+.list_wrp {
+}
+.list_wrp_ul {
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  /* justify-content: flex-end; */
+  list-style: none;
+  padding: 20px 40px 20px 10px;
+  border-radius: 12px;
+  border: 2px solid var(--black-12, #1F1F1F);
+  background: var(--black-06, #0F0F0F);
+}
+.list_wrp_li {
+  padding: 0;
+}
+.list_wrp_li a {
+    color: var(--grey-75, #BFBFBF);
+    font-family: Manrope;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 27px */
+}
+
+.header_wrp .loginBtn {
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: #fff;
+  border-radius: 7px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #fff;
+  transition: 0.5s;
+}
+.header_wrp .loginBtn:hover {
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: #7b66f8;
+  border-radius: 7px;
+  padding: 10px 20px;
+  background-color: #7b66f8;
+  color: #fff;
+  transition: 0.5s;
+}
+.header_wrp .signupBtn {
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: #7b66f8;
+  border-radius: 7px;
+  padding: 10px 20px;
+  background-color: #7b66f8;
+  color: #fff;
+  transition: 0.5s;
+}
+.header_wrp .signupBtn:hover {
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: #fff;
+  border-radius: 7px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #fff;
+  transition: 0.5s;
+}
+.active {
+  color: #fff ;
+  border-radius: 8px;
+border: 1px solid var(--black-10, #1A1A1A);
+background: var(--black-10, #1A1A1A);
+padding: 14px 24px;
+
+}

@@ -1,0 +1,55 @@
+
+
+.MovieCard {
+    border-radius: 12px;
+    border: 1px solid var(--black-15, #262626);
+    background: var(--black-10, #1A1A1A);
+    padding: 15px;
+    position: relative;
+    margin: 0 12px;
+
+  }
+  
+  .MovieCard .ImageBox {
+    position: relative;
+  }
+  
+  .MovieCard .ImageBox::after {
+    content: "";
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    height: 44%;
+    background: linear-gradient(180deg, rgba(26, 26, 26, 0.00) 0%, #1A1A1A 101.79%);
+    z-index: 24;
+  }
+  
+  .MovieCard img {
+    
+    z-index: 2; /* Set a higher z-index for the image content */
+    width: 100%;
+    z-index: 2;
+    height: 192px;
+    border-radius: 12px;
+  }
+  
+
+  .MovieCard .text{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .MovieCard .text h6{
+    color: var(--absolute-white, #FFF);
+    font-family: Manrope;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 27px */
+  }
+  .MovieCard .text img{
+    width: 30px;
+height: 30px;
+  }
