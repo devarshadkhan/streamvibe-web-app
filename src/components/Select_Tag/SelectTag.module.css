@@ -1,0 +1,10 @@
+.SelectTagCss{}
+.SelectTagCss select{width: 100%;background-color: transparent; border: 2px solid red; color: #fff;}
+.SelectTagCss select:focus {
+    border-color: red;
+    outline: 0;
+    box-shadow: none;
+}
+.SelectTagCss select option{
+    color: #000;
+}

@@ -185,8 +185,8 @@ body {
   font-family: Outfit, sans-serif;
   font-family: Pacifico, cursive;
   font-family: Rubik, sans-serif; */
-  /* background-color: #0C0918; */
-  background: var(--black-08, #141414);
+  /* background-color: #fff; */
+  background: #141414 !important;
   font-family: 'Manrope', sans-serif;
 }
 

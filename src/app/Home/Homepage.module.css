@@ -179,7 +179,7 @@ line-height: 150%; /* 87px */
     position: relative;
 }
 
-.home_third_wrp .category_movie_list{}
+.home_third_wrp .category_movie_list{display: flex;align-items: center;justify-content: space-between;}
 .home_third_wrp .category_movie_list h3{
     color: var(--absolute-white, #FFF);
 font-family: Manrope;
@@ -201,3 +201,23 @@ line-height: 150%; /* 57px */
     }
 
     
+.various_device{
+    padding: 3rem 0 2rem;
+}
+.various_device .headSec{}
+.various_device .headSec h4{
+    color: var(--absolute-white, #FFF);
+font-family: Manrope;
+font-size: 38px;
+font-style: normal;
+font-weight: 700;
+line-height: 150%; /* 57px */
+}
+.various_device .headSec p{
+    color: var(--grey-60, #999);
+font-family: Manrope;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 27px */
+}

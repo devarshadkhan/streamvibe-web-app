@@ -1,8 +1,9 @@
+import SelectTag from '@/components/Select_Tag/SelectTag'
 import React from 'react'
 
 const Movie = () => {
   return (
-    <div>Movie</div>
+    <div><SelectTag Optiondata={["today", "tommorrow"]} /></div>
   )
 }
 

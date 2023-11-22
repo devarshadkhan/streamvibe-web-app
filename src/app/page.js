@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar/Navbar";
+import Navbar from "@/Layout/Navbar/Navbar";
 import banner from "../assets/images/main-banner-center-home.png"
 import Image from "next/image";
 import { CssBaseline, Toolbar } from "@mui/material";

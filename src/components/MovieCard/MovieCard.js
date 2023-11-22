@@ -4,14 +4,22 @@ import { Box } from "@mui/material";
 import Image from "next/image";
 import image1 from "../../assets/images/Image (1).png";
 import arraow from "../../assets/svg_icon/arraow-right.svg";
-import { useDispatch } from "react-redux";
-import { trendind_all } from "@/redux-feature/Trending-Api/All";
+import Link from "next/link";
 const MovieCard = ({ item }) => {
-
+console.log(item);
   return (
     <>
       <Box className={styles.MovieCard}>
-        <Box className={styles.ImageBox}>
+       {/* <Link href={`explore/${item.media_type}/${item.id}`}> */}
+       <Link href={{
+        pathname:`explore`,
+        query:{
+          id:item?.id,
+          media_type:item?.media_type
+        }
+        
+       }}>
+       <Box className={styles.ImageBox}>
           <Image
             src={`https://image.tmdb.org/t/p/w500${item?.poster_path}`}
             width={100}
@@ -31,6 +39,7 @@ const MovieCard = ({ item }) => {
             <Image src={arraow} />
           </Box>
         </Box>
+       </Link>
       </Box>
     </>
   );

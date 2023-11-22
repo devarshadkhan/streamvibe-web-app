@@ -65,13 +65,15 @@ const initialState = {
   loading: false,
   isSuccess: false,
   errorMessage: null,
+  selectedOptionEndPoint:"day"
 };
 
 export const trendind_all = createAsyncThunk(
   "tranding/All",
-  async (params, { rejectWithValue }) => {
+  async (params, {getState, rejectWithValue }) => {
     try {
-      const response = await axiosInstance.get(`trending/all/${params}`);
+      const selectedOptionEndPoint = getState().trendAllData.selectedOptionEndPoint;
+      const response = await axiosInstance.get(`trending/all/${selectedOptionEndPoint}`);
       return response.data;
     } catch (error) {
       console.error(error);
@@ -87,6 +89,9 @@ export const AllTrendSlice = createSlice({
     AllTrend: (state, action) => {
       state.data = action.payload;
     },
+    trendAllData_day_by_Week:(state,action)=>{
+      state.selectedOptionEndPoint = action.payload
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -106,5 +111,5 @@ export const AllTrendSlice = createSlice({
   },
 });
 
-export const { AllTrend } = AllTrendSlice.actions;
+export const { AllTrend, trendAllData_day_by_Week } = AllTrendSlice.actions;
 export default AllTrendSlice.reducer;
