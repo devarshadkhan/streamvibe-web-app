@@ -6,9 +6,7 @@ import HomePage from "./Home/HomePage";
 export default function Home() {
   return (
    <>
-    <CssBaseline />
-    <Toolbar />
-   <Navbar />
+    
    <HomePage />
    {/* <Image src={banner}  style={{position:"absolute",top:"0",height:"auto"}}/> */}
    </>

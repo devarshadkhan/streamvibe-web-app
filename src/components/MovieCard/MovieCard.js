@@ -12,7 +12,7 @@ console.log(item);
       <Box className={styles.MovieCard}>
        {/* <Link href={`explore/${item.media_type}/${item.id}`}> */}
        <Link href={{
-        pathname:`explore`,
+        pathname:`explore/${item?.id}`,
         query:{
           id:item?.id,
           media_type:item?.media_type

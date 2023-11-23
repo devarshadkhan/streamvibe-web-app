@@ -21,6 +21,8 @@ import './globals.css'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from "@/Layout/Navbar/Navbar";
+import { CssBaseline, Toolbar } from "@mui/material";
 // import 'bootstrap/dist/js/bootstrap.bundle';
 
 
@@ -32,6 +34,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <ReduxProvider>
+    <Navbar />
         <body >{children}</body>
       </ReduxProvider>
     </html>

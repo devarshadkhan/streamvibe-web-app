@@ -1,6 +1,6 @@
 "use client";
 import { Box } from "@mui/material";
-import Container from 'react-bootstrap/Container';
+import Container from "react-bootstrap/Container";
 
 import Slider from "react-slick";
 import React, { useEffect, useState } from "react";
@@ -22,8 +22,10 @@ import {
   trendind_all,
 } from "@/redux-feature/Trending-Api/Trending_day_by_week_slice";
 import SelectTag from "@/components/Select_Tag/SelectTag";
-import { Col, Row } from 'react-bootstrap';
+import { Col, Row } from "react-bootstrap";
 import { various_device } from "@/utils/MockData/MockData";
+import Down from "../../assets/svg_icon/accordion-down.svg"
+import Up from "../../assets/svg_icon/accordion-up.svg"
 const HomePage = () => {
   const slider = React.useRef(null);
   const settings = {
@@ -82,6 +84,16 @@ const HomePage = () => {
       console.log(res);
     });
   }, [dispatch, select_by_day_Week]);
+
+
+  /**
+   * Accordion 
+   * 
+   */
+  const [openIndex, setOpenIndex] = useState(null);
+  const handleToggleAccordion = (index) => {
+    setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
   return (
     <>
       <Box className={styles.homepage_wrp}>
@@ -96,8 +108,8 @@ const HomePage = () => {
 
         <Box className={styles.hone_secnd_wrp}>
           <Container>
-              <Row >
-                <Col>
+            <Row>
+              <Col>
                 <Box className={styles.heading_title}>
                   <h1>The Best Streaming Experience</h1>
                   <p>
@@ -109,8 +121,8 @@ const HomePage = () => {
                     so you can easily find the content you want to watch.
                   </p>
                 </Box>
-                </Col>
-              </Row>
+              </Col>
+            </Row>
           </Container>
         </Box>
         <Box className={styles.home_third_wrp}>
@@ -118,14 +130,14 @@ const HomePage = () => {
             <Row>
               <Col>
                 <Box className={styles.category_movie_list}>
-                 <Box>
-                 <h3>Explore our wide variety of categories</h3>
-                  <p>
-                    Whether you're looking for a comedy to make you laugh, a
-                    drama to make you think, or a documentary to learn something
-                    new
-                  </p>
-                 </Box>
+                  <Box>
+                    <h3>Explore our wide variety of categories</h3>
+                    <p>
+                      Whether you're looking for a comedy to make you laugh, a
+                      drama to make you think, or a documentary to learn
+                      something new
+                    </p>
+                  </Box>
 
                   <SelectTag
                     value={select_by_day_Week}
@@ -135,7 +147,6 @@ const HomePage = () => {
                 </Box>
 
                 <Box className={styles.sliders_wrp}>
-          
                   <Slider {...settings} ref={slider}>
                     {trendingMovieAllData?.map((item, index) => (
                       <div>
@@ -151,35 +162,85 @@ const HomePage = () => {
 
         {/* React-BootStrap Used  for this app */}
         <Box className={styles.various_device}>
-            <Container>
-              <Row>
-                <Col>
-                  <Box className={styles.headSec}>
-                    <h4>We Provide you streaming experience across various devices.</h4>
-                    <p>With StreamVibe, you can enjoy your favorite movies and TV shows anytime, anywhere. Our platform is designed to be compatible with a wide range of devices, ensuring that you never miss a moment of entertainment.</p>
-                  </Box>
-                </Col>
-                      <Box>
-                        <Row>
-                        {various_device.map((item)=>{
-                          return (
-                            <>
-                            <Col  lg={4} md={6} >
-                              <Box>
-                                <h6>{item.title}</h6>
-                                <p>{item.body}</p>
-                              </Box>
-                          </Col>
-                            </>
-                          )
-                        })}
-                          
-                        </Row>
-                      </Box>
-              </Row>
-            </Container>
+          <Container>
+            <Row>
+              <Col>
+                <Box className={styles.headSec}>
+                  <h4>
+                    We Provide you streaming experience across various devices.
+                  </h4>
+                  <p>
+                    With StreamVibe, you can enjoy your favorite movies and TV
+                    shows anytime, anywhere. Our platform is designed to be
+                    compatible with a wide range of devices, ensuring that you
+                    never miss a moment of entertainment.
+                  </p>
+                </Box>
+              </Col>
+              <Box className={styles.various_box}>
+                <Row>
+                  {various_device.map((item) => {
+                    return (
+                      <>
+                        <Col lg={4} md={6}>
+                          <Box className={styles.v_box}>
+                            <div className={styles.v1_box}>
+                              <Image src={item.image} />
+                              <h6>{item.title}</h6>
+                            </div>
+                            <p>{item.body}</p>
+                          </Box>
+                        </Col>
+                      </>
+                    );
+                  })}
+                </Row>
+              </Box>
+            </Row>
+          </Container>
         </Box>
 
+        {/* accordion start */}
+
+        <Box className={styles.accrodion_wrp}>
+          <Container>
+            <Row>
+              <Col lg={8}>
+                <Box className={styles.acc_sec}>
+                  <h4>Frequently Asked Questions</h4>
+                  <p>
+                    Got questions? We've got answers! Check out our FAQ section
+                    to find answers to the most common questions about
+                    StreamVibe.
+                  </p>
+                </Box>
+              </Col>
+              <Col lg={4}>
+                <Box className={styles.acc_sec1}>
+                  <button>Ask a Question</button>
+                </Box>
+              </Col>
+
+              <Col lg={6}>
+                    <div className={styles.accr_first_wrp}>
+                        <div className={styles.scc_item}>
+                          <h6>01</h6>
+                        </div>
+                        <div className={styles.accr_body}>
+                          <div className={styles.accr_hdr}>
+                          <h4>What is StreamVibe?</h4>
+                          <div className={styles.accr_icon} onClick={()=>handleToggleAccordion(1)}>
+                         { openIndex === 1 ? <><Image src={Down} alt="" /></>:<><Image src={Up} alt="" /></>}
+                        </div>
+                          </div>
+                          <div> {openIndex ===1 && <p>StreamVibe is a streaming service that allows you to watch movies and shows on demand.</p>}</div>
+                        </div>
+                       
+                    </div>
+              </Col>
+            </Row>
+          </Container>
+        </Box>
       </Box>
     </>
   );

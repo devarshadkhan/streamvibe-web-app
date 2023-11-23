@@ -30,16 +30,18 @@ const Explore = () => {
 
   const id = searchParams.get('id');
   const media_type = searchParams.get('media_type');
-    //   const resp = async ()=>{
-    //     await axiosInstance.get(API.drmg).then((res)=>{
-    //         console.log(res);
-    //     })
-    // }
-    // useEffect(()=>{
-    //     resp()
-    // },[])
+      const resp = async ()=>{
+        await axiosInstance.get(`${API.drmg}/${id}`).then((res)=>{
+            console.log(res);
+        })
+    }
+    useEffect(()=>{
+        resp()
+    },[])
   return (
-    <div>page  <p>{media_type}    ====     {id}</p></div>
+    <>
+      page  <p>{media_type}    ====     {id}</p>
+    </>
   )
 }
 

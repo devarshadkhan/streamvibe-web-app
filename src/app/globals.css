@@ -206,90 +206,18 @@ section {
   overflow: hidden;
 }
 
-.css-1oqqzyl-MuiContainer-root{
-  /* max-width: 1440px; */
-  max-width: 1280px ;
-  padding: 0 40px;
-
-}
-
 
 
 
 :root{
   --e-global-color-primary: #0C0918;
-  --e-global-color-white: #fff;
-  --e-global-color-secondary: #F4F6FF;
-  --e-global-color-text: #3C4275C4;
-  --e-global-color-accent: #8B4DFB;
-  --e-global-color-068477d: #779AFE;
-  --e-global-color-5d63bd6: #C8ACF9;
-  --e-global-color-31e4db1: #FFFFFF;
-  --e-global-color-21528e6: #CFD4FFA3;
-  --e-global-color-53e4f1d: #101023;
-  --e-global-color-519c509: #FFFFFF00;
-  --e-global-color-e4e3f7a: #E4E4EC;
-  --e-global-color-df899b4: #0AB2FF;
-  --e-global-color-2783b33: #10102366;
-  --e-global-color-a34e6d8: #DDE2FA;
-  --e-global-color-da974a9: #BBACF98A;
-  --e-global-typography-primary-font-family: "Poppins";
-  --e-global-typography-primary-font-size: 50px;
-  --e-global-typography-primary-font-weight: 700;
-  --e-global-typography-primary-text-transform: capitalize;
-  --e-global-typography-primary-line-height: 1.5em;
-  --e-global-typography-secondary-font-family: "Poppins";
-  --e-global-typography-secondary-font-size: 46px;
-  --e-global-typography-secondary-font-weight: 700;
-  --e-global-typography-secondary-text-transform: capitalize;
-  --e-global-typography-secondary-line-height: 1.5em;
-  --e-global-typography-text-font-family: "Poppins";
-  --e-global-typography-text-font-size: 15px;
-  --e-global-typography-text-font-weight: 400;
-  --e-global-typography-text-line-height: 1.7em;
-  --e-global-typography-accent-font-family: "Poppins";
-  --e-global-typography-accent-font-size: 15px;
-  --e-global-typography-accent-font-weight: 600;
-  --e-global-typography-accent-text-decoration: none;
-  --e-global-typography-accent-line-height: 1.5em;
-  --e-global-typography-fe40df8-font-family: "Poppins";
-  --e-global-typography-fe40df8-font-size: 36px;
-  --e-global-typography-fe40df8-font-weight: 700;
-  --e-global-typography-fe40df8-text-transform: capitalize;
-  --e-global-typography-fe40df8-line-height: 1.5em;
-  --e-global-typography-24b90fd-font-family: "Poppins";
-  --e-global-typography-24b90fd-font-size: 28px;
-  --e-global-typography-24b90fd-font-weight: 600;
-  --e-global-typography-24b90fd-text-transform: capitalize;
-  --e-global-typography-24b90fd-line-height: 1.5em;
-  --e-global-typography-2d0a000-font-family: "Poppins";
-  --e-global-typography-2d0a000-font-size: 21px;
-  --e-global-typography-2d0a000-font-weight: 700;
-  --e-global-typography-2d0a000-line-height: 1.5em;
-  --e-global-typography-b428385-font-family: "Poppins";
-  --e-global-typography-b428385-font-size: 18px;
-  --e-global-typography-b428385-font-weight: 600;
-  --e-global-typography-b428385-line-height: 1.5em;
-  --e-global-typography-ff75acd-font-family: "Poppins";
-  --e-global-typography-ff75acd-font-size: 14px;
-  --e-global-typography-ff75acd-font-weight: 400;
-  --e-global-typography-ff75acd-line-height: 1.5em;
-  --e-global-typography-1e778fb-font-family: "Poppins";
-  --e-global-typography-1e778fb-font-size: 120px;
-  --e-global-typography-1e778fb-font-weight: 700;
-  --e-global-typography-1e778fb-line-height: 1.2em;
-  --e-global-typography-a1ba755-font-family: "Times New Roman";
-  --e-global-typography-a1ba755-font-size: 56px;
-  --e-global-typography-a1ba755-font-weight: 700;
-  --e-global-typography-a1ba755-font-style: italic;
-  --e-global-typography-a1ba755-line-height: 1.4em;
 }
 
 ::-webkit-scrollbar {
   width: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #7B66F8;
+  background: red;
   border-radius: 10px;
 }
 
@@ -333,4 +261,34 @@ section {
 .slick-dots.slick-thumb li.slick-active {
   background-color: red;
   width: 24px;
+}
+
+
+/* Glocal Responsive */
+
+.container {
+  max-width: 1440px !important;
+  padding: 0 65px !important;
+}
+
+@media only screen and (min-width: 1920px) {}
+
+@media only screen and (max-width: 1580px) {
+  .container {
+    max-width: 1440px;
+    padding: 0 65px;
+  }
+}
+@media only screen and (max-width: 1190px) and (min-width: 768px) {
+  .container {
+    max-width: 1440px;
+    padding: 0 65px;
+  } 
+}
+
+@media only screen and (max-width: 767px) {
+  .container {
+    max-width: 1440px;
+    padding: 0 30px;
+  }
 }
